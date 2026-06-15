@@ -1,4 +1,4 @@
-# Chatify 💬
+# WebChat 💬
 
 A real-time chat application built with the MERN stack that enables users to connect, authenticate, and exchange messages through a modern and responsive interface.
 
