@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 99px;
+}
+
+/* Custom CSS Variables for Chatify */
+:root {
+  --chatify-purple: #8b5cf6;
+  --chatify-purple-dark: #6d28d9;
+  --chatify-pink: #ec4899;
+  --chatify-bg: #0f0f1a;
+  --chatify-surface: #1a1a2e;
+  --chatify-surface2: #16213e;
+  --chatify-border: rgba(139, 92, 246, 0.15);
+  --chatify-text: #e2e8f0;
+  --chatify-muted: #94a3b8;
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+.glow-pink {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated background */
+.animated-bg {
+  background: linear-gradient(-45deg, #0f0f1a, #1a1a2e, #16213e, #0f3460);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Message bubble animations */
+@keyframes messageIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.message-animate {
+  animation: messageIn 0.2s ease forwards;
+}
+
+/* Typing indicator */
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+.typing-dot:nth-child(1) { animation: typingBounce 1.2s 0s infinite; }
+.typing-dot:nth-child(2) { animation: typingBounce 1.2s 0.15s infinite; }
+.typing-dot:nth-child(3) { animation: typingBounce 1.2s 0.3s infinite; }
+
+/* Pulse for online badge */
+@keyframes onlinePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0); }
+}
+.online-badge {
+  animation: onlinePulse 2s infinite;
+}
+
+/* Input focus glow */
+.input-chatify {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--chatify-text);
+  border-radius: 12px;
+  padding: 10px 16px;
+  width: 100%;
+  outline: none;
+  transition: all 0.2s;
+}
+.input-chatify:focus {
+  border-color: var(--chatify-purple);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+.input-chatify::placeholder {
+  color: var(--chatify-muted);
+}
+
+/* Button styles */
+.btn-chatify {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 11px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+.btn-chatify:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+}
+.btn-chatify:active { transform: translateY(0); }
+.btn-chatify:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Card surfaces */
+.surface {
+  background: var(--chatify-surface);
+  border: 1px solid var(--chatify-border);
+  border-radius: 16px;
+}
+.surface2 {
+  background: var(--chatify-surface2);
+  border: 1px solid var(--chatify-border);
+  border-radius: 16px;
+}
