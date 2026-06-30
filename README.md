@@ -1,8 +1,8 @@
-# Chuglify
+# Chatify
 
 Real-time chat application with authentication, profile management, image sharing, and email onboarding.
 
-Live app: https://chuglify.onrender.com/
+Live app: 
 
 ## Features
 
@@ -37,7 +37,7 @@ Live app: https://chuglify.onrender.com/
 ## Project Structure
 
 ```text
-Chuglify/
+Chatify-app/
 |- backend/
 |  |- src/
 |  |  |- controllers/
